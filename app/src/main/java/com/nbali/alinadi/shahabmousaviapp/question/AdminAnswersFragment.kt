@@ -22,6 +22,8 @@ class AdminAnswersFragment : Fragment() {
 
     lateinit var questionViewModel: QuestionViewModel
     lateinit var profileViewModel: ProfileViewModel
+    lateinit var dialog:AnswerAdminDialog
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,10 +38,20 @@ class AdminAnswersFragment : Fragment() {
 
         questionViewModel.getAllNoAnswers(profileViewModel.getRole()).observe(this, Observer {
             if (it.isNotEmpty()){
-                recycler.adapter = AdminAnswersAdapter(context!!,it) {
-                    questionViewModel.returnedAnswer(it.question_id).observe(this, Observer {
-                        Toast.makeText(context,it.message,Toast.LENGTH_SHORT).show()
-                    })
+                recycler.adapter = AdminAnswersAdapter(context!!,it) {answer,type ->
+                    if (type == "returned"){
+                        questionViewModel.returnedAnswer(answer.question_id).observe(this, Observer {
+                            Toast.makeText(context,it.message,Toast.LENGTH_SHORT).show()
+                        })
+                    }else{
+                        dialog = AnswerAdminDialog(answer) {id,answer ->
+                            questionViewModel.answerQuestion(id,answer).observe(this, Observer{
+                                Toast.makeText(context,it.message,Toast.LENGTH_SHORT).show()
+                                dialog.dismiss()
+                            })
+                        }
+                        dialog.show(childFragmentManager,null)
+                    }
                 }
             }else{
                 emptyState.visibility = View.VISIBLE

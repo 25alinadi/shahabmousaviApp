@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nbali.alinadi.shahabmousaviapp.R
 import com.nbali.alinadi.shahabmousaviapp.models.Answer
 
-class AdminAnswersAdapter(var context: Context, var list:List<Answer>,var onAdminAnswerItemClick:(answer:Answer)->Unit) : RecyclerView.Adapter<AdminAnswersAdapter.AdminAnswersViewHolder>() {
+class AdminAnswersAdapter(var context: Context, var list:List<Answer>,var onAdminAnswerItemClick:(answer:Answer,type:String)->Unit) : RecyclerView.Adapter<AdminAnswersAdapter.AdminAnswersViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdminAnswersViewHolder {
         var view = LayoutInflater.from(context).inflate(R.layout.noanswer_item,parent,false)
@@ -44,14 +44,14 @@ class AdminAnswersAdapter(var context: Context, var list:List<Answer>,var onAdmi
         }
 
         holder.btnReturnedAnswer.setOnClickListener{
-            onAdminAnswerItemClick(list[position])
+            onAdminAnswerItemClick(list[position],"returned")
 //            list.dropLast(position)
 //            notifyItemRemoved(position);
 //            notifyItemRangeChanged(position,list.size);
         }
 
         holder.btnAnswerQuestion.setOnClickListener{
-            onAdminAnswerItemClick(list[position])
+            onAdminAnswerItemClick(list[position],"answer")
         }
 
     }

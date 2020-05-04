@@ -123,6 +123,7 @@ class QuestionApiService(var context:Application) {
 
             override fun onResponse(call: Call<Message>, response: Response<Message>) {
                 mutableLiveData.value = response.body()
+                Log.i("LOG",response.body()!!.status)
             }
 
         })

@@ -25,8 +25,6 @@ import com.nbali.alinadi.shahabmousaviapp.utils.Utils
 class QuestionFragment : Fragment() {
 
     lateinit var viewModel: QuestionViewModel
-    lateinit var role:String
-    lateinit var status:String
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.fragment_question, container, false)
         viewModel = ViewModelProvider(this).get(QuestionViewModel::class.java)
@@ -37,15 +35,12 @@ class QuestionFragment : Fragment() {
         var txtRules = view.findViewById<TextView>(R.id.txt_question_agreeWhitRules)
 
         viewModel.getRole().observe(this, Observer {
-            role = it.role
-            status = it.status
+            if(it.role == "admin"){
+                fab.hide()
+                checkBox.visibility = View.GONE
+                txtRules.visibility = View.GONE
+            }
         })
-
-        if(role == "admin" && status == "success"){
-            fab.hide()
-            checkBox.visibility = View.GONE
-            txtRules.visibility = View.GONE
-        }
 
         checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
             if(isChecked){
@@ -64,19 +59,21 @@ class QuestionFragment : Fragment() {
         }
 
         btnQuestions.setOnClickListener{
-            if (role == "admin" && status == "success"){
-                var transaction = activity!!.supportFragmentManager.beginTransaction()
-                Utils.customAnimation(activity!!.findViewById(R.id.main_fragment_frame),animation = Techniques.SlideInRight)
-                transaction.replace(R.id.main_fragment_frame,AdminAnswersFragment())
-                transaction.addToBackStack(null)
-                transaction.commit()
-            }else{
-                var transaction = activity!!.supportFragmentManager.beginTransaction()
-                Utils.customAnimation(activity!!.findViewById(R.id.main_fragment_frame),animation = Techniques.SlideInRight)
-                transaction.replace(R.id.main_fragment_frame,AnswerFragment())
-                transaction.addToBackStack(null)
-                transaction.commit()
-            }
+            viewModel.getRole().observe(this, Observer {
+                if (it.role == "admin"){
+                    var transaction = activity!!.supportFragmentManager.beginTransaction()
+                    Utils.customAnimation(activity!!.findViewById(R.id.main_fragment_frame),animation = Techniques.SlideInRight)
+                    transaction.replace(R.id.main_fragment_frame,AdminAnswersFragment())
+                    transaction.addToBackStack(null)
+                    transaction.commit()
+                }else{
+                    var transaction = activity!!.supportFragmentManager.beginTransaction()
+                    Utils.customAnimation(activity!!.findViewById(R.id.main_fragment_frame),animation = Techniques.SlideInRight)
+                    transaction.replace(R.id.main_fragment_frame,AnswerFragment())
+                    transaction.addToBackStack(null)
+                    transaction.commit()
+                }
+            })
         }
 
         btnRules.setOnClickListener{

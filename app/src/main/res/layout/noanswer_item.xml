@@ -136,12 +136,11 @@
             android:id="@+id/btn_noanswer_answer_question"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
             android:layout_weight="1"
             android:background="@drawable/shape_btn_crismon"
-            android:text="پاسخ به سوال"
-            android:textColor="@color/white"
-            android:layout_marginLeft="4dp"
-            />
+            android:text="پاسخ دادن سوال"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 </RelativeLayout>
