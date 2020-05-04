@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/default_white"
+    android:paddingTop="8dp"
+    tools:context=".profile.ContactusFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/rl_contactus_insta"
+        app:cardBackgroundColor="@color/caltured"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="2dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingRight="4dp"
+            android:paddingLeft="4dp"
+            android:layout_centerVertical="true"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/img_contactus_insta"
+                app:srcCompat="@drawable/ic_insta_prussian_blue"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/img_contactus_insta"
+                android:text="@string/instagram"
+                android:textColor="@color/prussian_blue"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:layout_marginRight="8dp"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/rl_contactus_telegram"
+        android:layout_below="@id/rl_contactus_insta"
+        app:cardBackgroundColor="@color/caltured"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="2dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingRight="4dp"
+            android:paddingLeft="4dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/img_contactus_telegram"
+                app:srcCompat="@drawable/ic_telegram_prussian_blue"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/img_contactus_telegram"
+                android:text="@string/telegram"
+                android:textColor="@color/prussian_blue"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:layout_marginRight="8dp"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/rl_contactus_website"
+        android:layout_below="@id/rl_contactus_telegram"
+        app:cardBackgroundColor="@color/caltured"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="2dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingRight="4dp"
+            android:paddingLeft="4dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/img_contactus_website"
+                app:srcCompat="@drawable/ic_website_prussian_blue"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/img_contactus_website"
+                android:text="@string/webSite"
+                android:textColor="@color/prussian_blue"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:layout_marginRight="8dp"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/rl_contactus_phone"
+        android:layout_below="@id/rl_contactus_website"
+        app:cardBackgroundColor="@color/caltured"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="2dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingRight="4dp"
+            android:paddingLeft="4dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/img_contactus_phone"
+                app:srcCompat="@drawable/ic_phone_prussian_blue"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/img_contactus_phone"
+                android:text="@string/call"
+                android:textColor="@color/prussian_blue"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:layout_marginRight="8dp"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

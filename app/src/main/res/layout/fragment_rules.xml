@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/default_white"
+    tools:context=".question.RulesFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/rule_actionbar_rl"
+        android:elevation="8dp">
+        <ImageView
+            android:id="@+id/rule_action_bar_arrow_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp"
+            app:srcCompat="@drawable/ic_arrow_forward_pursian_blue_24dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/rule_action_bar_arrow_back"
+            android:text="قوانین پرسش و پاسخ"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp"
+            android:textColor="@color/prussian_blue"
+            android:fontFamily="@font/iran_bold"
+            android:textSize="16sp"
+            />
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/rv_rules_rules"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

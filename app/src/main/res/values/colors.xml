@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#536492</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorPrimaryDark2">#111657</color>
+    <color name="colorAccent">#D80032</color>
+    <color name="white">#ffffff</color>
+    <color name="default_white">#fafafa</color>
+    <color name="black">#000000</color>
+    <color name="gray50">#f0f0f2</color>
+    <color name="gray100">#F5F5F5</color>
+    <color name="gray200">#EEEEEE</color>
+    <color name="gray300">#E0E0E0</color>
+    <color name="gray400">#BDBDBD</color>
+    <color name="gray500">#9E9E9E</color>
+    <color name="gray600">#757575</color>
+    <color name="gray700">#616161</color>
+    <color name="darkgray2">#333333</color>
+    <color name="grayblue">#aaaebf</color>
+    <color name="grayblue2">#8698ad</color>
+    <color name="darkblue">#262b3a</color>
+    <color name="darkgray">#3d3e51</color>
+    <color name="prussian_blue">#1D3557</color>
+    <color name="prussian_blue_light">#254571</color>
+    <color name="steel_blue">#457B9D</color>
+    <color name="honey_due">#F1FAEE</color>
+    <color name="powdre_blue">#A8DADC</color>
+    <color name="crismon">#D80032</color>
+    <color name="crismon_dark">#A30127</color>
+    <color name="crismon_light">#EF233C</color>
+    <color name="space_cadet">#2B2D42</color>
+    <color name="cool_gray">#8D99AE</color>
+    <color name="caltured">#EDF2F4</color>
+    <color name="darkpopular">#432344</color>
+    <color name="red2">#ff2525</color>
+    <color name="yellow_primary">#ffc03d</color>
+    <color name="yellow_light">#FAD27F</color>
+    <color name="yellow_dark">#C8952C</color>
+    <color name="white_bg">#F1F1FA</color>
+
+</resources>

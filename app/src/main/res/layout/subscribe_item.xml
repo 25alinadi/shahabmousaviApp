@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/subscribe_parent_rl"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/caltured"
+    app:cardCornerRadius="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:id="@+id/subscribe_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="8dp"
+            android:textColor="@color/space_cadet"
+            android:textSize="12sp"
+            tools:text="عنوان اشتراک" />
+
+        <TextView
+            android:id="@+id/subscribe_duration_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/subscribe_title_tv"
+            android:layout_centerHorizontal="true"
+            android:textSize="12sp"
+            android:textColor="@color/cool_gray"
+            android:padding="4dp"
+            tools:text="۵۰ روز"
+            />
+
+        <TextView
+            android:id="@+id/subscribe_question_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_below="@id/subscribe_duration_tv"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/cool_gray"
+            tools:text="۴۰ سوال"
+            android:padding="8dp"
+            />
+
+        <TextView
+            android:id="@+id/subscribe_amount_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/subscribe_question_tv"
+            android:layout_centerHorizontal="true"
+            android:textSize="12sp"
+            android:textColor="@color/cool_gray"
+            android:padding="4dp"
+            tools:text="۲,۰۰۰,۰۰۰ تومان"
+            />
+
+        <Button
+            android:id="@+id/subscribe_button_sale_btn"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_below="@id/subscribe_amount_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentBottom="true"
+            android:hint="خرید اشتراک"
+            android:textSize="12sp"
+            android:textColorHint="@color/white"
+            android:background="@drawable/shape_bg_btn_sale"
+            />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

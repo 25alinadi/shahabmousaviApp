@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/post_parent_rl"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="4dp"
+    android:elevation="4dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    app:cardBackgroundColor="@color/caltured"
+    app:cardCornerRadius="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/post_image_iv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="8dp"
+            app:civ_border_color="@color/prussian_blue"
+            app:civ_border_width="1dp"
+            app:civ_shadow_color="@color/prussian_blue"
+            tools:src="@drawable/mousavi_bg" />
+
+        <TextView
+            android:id="@+id/post_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/post_image_iv"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp"
+            android:paddingRight="8dp"
+            android:textColor="@color/space_cadet"
+            android:textSize="14sp"
+            tools:text="عنوان پست" />
+
+        <TextView
+            android:id="@+id/post_date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/post_image_iv"
+            android:padding="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:text="تاریخ پست"
+            android:textColor="@color/cool_gray"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/shape_item_btn_view"
+            android:padding="4dp"
+            android:text="مشاهده پست"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.HomeFragment">
+
+    <RelativeLayout
+        android:id="@+id/home_actionbar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/iran_bold"
+            android:paddingRight="16dp"
+            android:text="دکتر شهاب موسوی"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/home_coin_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="16dp"
+            android:src="@drawable/coin_white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/home_service_one_rl"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/home_doctor_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:fontFamily="@font/iran_bold"
+            android:paddingRight="16px"
+            android:text="@string/doctor_name"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/home_doctor_name_tv"
+            android:layout_alignParentRight="true"
+            android:paddingRight="16px"
+            android:text="@string/doctor_profeciency"
+            android:textColor="@color/grayblue"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/home_service_one_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape_bg_service"
+        android:paddingLeft="8dp"
+        android:paddingTop="16dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:id="@+id/service_row2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <RelativeLayout
+                android:id="@+id/home_analysis_parent_rl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:foreground="?selectableItemBackground"
+                android:layout_margin="8dp"
+                android:background="@drawable/shape_bg_service_btn"
+                android:paddingBottom="8dp"
+                android:elevation="2dp"
+                >
+
+                <ImageView
+                    android:id="@+id/home_analysis_icon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_analysis_orange" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/home_analysis_icon"
+                    android:paddingTop="4dp"
+                    android:text="سبد تحلیل"
+                    android:textColor="@color/darkblue"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/home_advice_parent_rl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:foreground="?selectableItemBackground"
+                android:background="@drawable/shape_bg_service_btn"
+                android:layout_margin="8dp"
+                android:paddingBottom="8dp"
+                android:elevation="2dp"
+                >
+
+                <ImageView
+                    android:id="@+id/home_advice_icon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_days_orange" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/home_advice_icon"
+                    android:paddingTop="4dp"
+                    android:text="وقت مشاوره"
+                    android:textColor="@color/darkblue"
+                    android:textSize="10sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/home_subscribe_parent_rl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:foreground="?selectableItemBackground"
+                android:layout_margin="8dp"
+                android:paddingBottom="8dp"
+                android:background="@drawable/shape_bg_service_btn"
+                android:elevation="2dp"
+                >
+
+                <ImageView
+                    android:id="@+id/home_subscribe_icon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_amount_subscribe_orange" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/home_subscribe_icon"
+                    android:paddingTop="4dp"
+                    android:text="خرید اشتراک"
+                    android:textColor="@color/darkblue"
+                    android:textSize="10sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

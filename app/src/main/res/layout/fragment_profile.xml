@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/default_white"
+    tools:context=".profile.ProfileFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/profile_actionbar_rl"
+        android:elevation="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"            android:text="پروفایل کاربری"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp"
+            android:textColor="@color/prussian_blue"
+            android:fontFamily="@font/iran_bold"
+            android:textSize="16sp"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:background="@color/prussian_blue"
+        android:id="@+id/rel_profile_profileNameFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:tint="@color/white"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/ic_profile_black"
+            android:layout_width="40dp"
+            android:id="@+id/img_profile_profileImage"
+            android:layout_height="40dp"/>
+
+        <TextView
+            android:id="@+id/txt_profile_name"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/white"
+            android:layout_toLeftOf="@id/img_profile_profileImage"
+            tools:text="شهاب موسوی"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:background="@color/prussian_blue"
+        app:tabTextColor="@color/white"
+        app:tabSelectedTextColor="@color/yellow_primary"
+        app:tabIndicatorColor="@color/yellow_primary"
+        android:layout_width="match_parent"
+        android:id="@+id/tab_profile"
+        android:layout_height="wrap_content"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layoutDirection="ltr"
+        android:layout_width="match_parent"
+        android:id="@+id/viewPager_profile"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

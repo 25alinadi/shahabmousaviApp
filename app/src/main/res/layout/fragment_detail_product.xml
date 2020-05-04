@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".post.DetailProductFragment"
+    android:orientation="vertical"
+    android:background="@color/default_white"
+    android:scrollbars="none">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/img_detialproduct_image"
+            android:src="@drawable/load_img"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            />
+
+        <ImageView
+            android:id="@+id/productdetail_action_bar_arrow_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:paddingRight="4dp"
+            android:layout_margin="16dp"
+            app:srcCompat="@drawable/ic_arrow_forward_white_24dp"
+            />
+
+        <RelativeLayout
+            android:id="@+id/product_detail_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_bg_service"
+            android:layout_marginTop="220dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="16dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="16dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_detailproduct_amount"
+                tools:text="۲,۰۰۰,۰۰۰ تومان"
+                android:textColor="@color/steel_blue"
+                android:layout_alignParentRight="true"
+                android:textSize="12sp"
+                android:layout_marginRight="16dp"
+                android:padding="8dp"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/ll_detailproduct_btn"
+                android:layout_marginLeft="16dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignTop="@id/txt_detailproduct_amount"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_detailproducts_website_link"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:srcCompat = "@drawable/ic_web_prussian_blue"
+                    android:background="@drawable/shape_detail_btn"
+                    android:padding="4dp"
+                    android:layout_marginRight="8dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_detailproducts_bookmark"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:srcCompat = "@drawable/ic_bookmark_black_24dp"
+                    android:background="@drawable/shape_detail_btn"
+                    android:padding="8dp"
+                    android:layout_marginRight="8dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_detailproducts_share"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:srcCompat = "@drawable/share_variant"
+                    android:background="@drawable/shape_detail_btn"
+                    android:padding="8dp"
+                    android:tint="@color/prussian_blue"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_detialproduct_title"
+                android:layout_alignParentRight="true"
+                tools:text="عنوان محصول"
+                android:layout_below="@id/ll_detailproduct_btn"
+                android:textColor="@color/prussian_blue"
+                android:textSize="16sp"
+                android:padding="4dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="4dp"
+                />
+
+            <View
+                android:id="@+id/v_detailproduct_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/txt_detialproduct_title"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/gray400" />
+
+            <TextView
+                android:id="@+id/txt_detailproduct_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v_detailproduct_view"
+                android:textColor="@color/darkgray2"
+                android:textSize="12sp"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

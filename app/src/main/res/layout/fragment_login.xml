@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_white"
+    tools:context=".profile.LoginFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/login_actionbar_rl"
+        android:elevation="8dp">
+        <ImageView
+            android:id="@+id/login_action_bar_arrow_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp"
+            app:srcCompat="@drawable/ic_arrow_forward_pursian_blue_24dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/login_action_bar_arrow_back"
+            android:text="ورود به حساب کاربری"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp"
+            android:textColor="@color/prussian_blue"
+            android:fontFamily="@font/iran_bold"
+            android:textSize="16sp"
+            />
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/edt_login_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_actionbar_rl"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/shape_edt_style"
+        android:gravity="right"
+        android:hint="ایمیل..."
+        android:padding="8dp"
+        android:paddingLeft="8dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        />
+<!--        android:drawableRight="@drawable/ic_profile_black"-->
+
+
+    <EditText
+        android:id="@+id/edt_login_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_login_email"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/shape_edt_style"
+        android:gravity="right"
+        android:hint="...کلمه عبور"
+        android:inputType="textPassword"
+        android:padding="8dp"
+        android:paddingLeft="8dp"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <Button
+        android:background="@drawable/shape_btn_primary"
+        android:id="@+id/btn_login_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_login_pass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="ورود به حساب کاربری"
+        android:textColor="@color/white" />
+
+    <Button
+        android:background="@drawable/shape_btn_yellow"
+        android:id="@+id/btn_login_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_login_login"
+        android:layout_alignRight="@id/btn_login_login"
+        android:layout_alignLeft="@id/btn_login_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="ثبت نام"
+        android:textColor="@color/prussian_blue" />
+
+
+</RelativeLayout>
+
+
+

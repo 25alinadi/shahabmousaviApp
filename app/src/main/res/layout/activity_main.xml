@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_white"
+    tools:context=".MainActivity">
+
+<!--    <com.gauravk.bubblenavigation.BubbleNavigationLinearView-->
+<!--        android:id="@+id/bottom_navigation_main"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:background="@color/default_white"-->
+<!--        android:padding="8dp"-->
+<!--        android:elevation="4dp"-->
+<!--        app:bnc_mode="spread">-->
+
+<!--        <com.gauravk.bubblenavigation.BubbleToggleView-->
+<!--            android:id="@+id/bn_item_profile"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:bt_colorActive="@color/crismon"-->
+<!--            app:bt_colorInactive="@color/grayblue2"-->
+<!--            app:bt_icon="@drawable/ic_profile_black"-->
+<!--            app:bt_shape="@drawable/shape_bg_btn_bottom_navigation"-->
+<!--            app:bt_title="@string/profile_bottom"-->
+<!--            app:bt_padding="8dp"-->
+<!--            app:bt_titlePadding="4dp" />-->
+
+<!--        <com.gauravk.bubblenavigation.BubbleToggleView-->
+<!--            android:id="@+id/bn_item_posts"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:bt_colorActive="@color/crismon"-->
+<!--            app:bt_colorInactive="@color/grayblue2"-->
+<!--            app:bt_icon="@drawable/ic_post_black"-->
+<!--            app:bt_shape="@drawable/shape_bg_btn_bottom_navigation"-->
+<!--            app:bt_title="@string/post_bottom"-->
+<!--            app:bt_padding="8dp"-->
+<!--            app:bt_titlePadding="4dp"-->
+<!--            android:layout_marginLeft="32dp"/>-->
+
+<!--        <com.gauravk.bubblenavigation.BubbleToggleView-->
+<!--            android:id="@+id/bn_item_questions"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:bt_colorActive="@color/crismon"-->
+<!--            app:bt_colorInactive="@color/grayblue2"-->
+<!--            app:bt_icon="@drawable/ic_question_black"-->
+<!--            app:bt_shape="@drawable/shape_bg_btn_bottom_navigation"-->
+<!--            app:bt_title="@string/question_bottom"-->
+<!--            app:bt_padding="8dp"-->
+<!--            app:bt_titlePadding="4dp"-->
+<!--            android:layout_marginLeft="32dp"/>-->
+
+<!--        <com.gauravk.bubblenavigation.BubbleToggleView-->
+<!--            android:id="@+id/bn_item_home"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:bt_active="true"-->
+<!--            app:bt_colorActive="@color/crismon"-->
+<!--            app:bt_colorInactive="@color/grayblue2"-->
+<!--            app:bt_icon="@drawable/ic_home_black"-->
+<!--            app:bt_shape="@drawable/shape_bg_btn_bottom_navigation"-->
+<!--            app:bt_title="@string/home_bottom"-->
+<!--            app:bt_padding="8dp"-->
+<!--            app:bt_titlePadding="4dp"-->
+<!--            android:layout_marginLeft="32dp"/>-->
+
+<!--    </com.gauravk.bubblenavigation.BubbleNavigationLinearView>-->
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/default_white"
+        app:mbn_circleColor="@color/prussian_blue"
+        app:mbn_backgroundBottomColor="@color/prussian_blue"
+        app:mbn_countBackgroundColor="#ff6f00"
+        app:mbn_countTextColor="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom_navigation_main"
+        app:mbn_defaultIconColor="@color/white_bg"
+        app:mbn_rippleColor="#2f424242"
+        app:mbn_selectedIconColor="@color/white"
+        app:mbn_shadowColor="#1f212121"/>
+    <FrameLayout
+        android:id="@+id/main_fragment_frame"
+        android:layout_above="@id/bottom_navigation_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/mousavi_bg2">
+    </FrameLayout>
+
+</RelativeLayout>

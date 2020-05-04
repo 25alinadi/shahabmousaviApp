@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/default_white"
+    tools:context=".question.AnswerFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/noanswer_actionbar_rl"
+        android:elevation="8dp">
+        <ImageView
+            android:id="@+id/noanswer_action_bar_arrow_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp"
+            app:srcCompat="@drawable/ic_arrow_forward_pursian_blue_24dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/noanswer_action_bar_arrow_back"
+            android:text="لیست سوال ها"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp"
+            android:textColor="@color/prussian_blue"
+            android:fontFamily="@font/iran_bold"
+            android:textSize="16sp"
+            />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/noanswer_actionbar_rl"
+        android:id="@+id/rv_noanswer_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/lin_noanswer_emptyFrame"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/default_white">
+
+        <TextView
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center"
+            android:text="سوال بدون پاسخ از ما نداریم"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cool_gray"
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_noanswer_emptyState"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="empty_admin.json"
+            app:lottie_loop="true"
+            android:layout_marginBottom="16dp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
