@@ -29,4 +29,12 @@ class QuestionRepository(var context:Application) {
     fun returnedAnswer(id:String):LiveData<Message>{
         return questionApiService.returnedAnswer(id)
     }
+
+    fun answerQuestion(id:String,answer:String):LiveData<Message>{
+        return questionApiService.answerQuestion(id, answer)
+    }
+
+    fun getRole():LiveData<Message>{
+        return questionApiService.getRole()
+    }
 }

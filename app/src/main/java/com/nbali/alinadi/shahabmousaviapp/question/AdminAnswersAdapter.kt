@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.nbali.alinadi.shahabmousaviapp.R
 import com.nbali.alinadi.shahabmousaviapp.models.Answer
@@ -44,6 +45,9 @@ class AdminAnswersAdapter(var context: Context, var list:List<Answer>,var onAdmi
 
         holder.btnReturnedAnswer.setOnClickListener{
             onAdminAnswerItemClick(list[position])
+//            list.dropLast(position)
+//            notifyItemRemoved(position);
+//            notifyItemRangeChanged(position,list.size);
         }
 
         holder.btnAnswerQuestion.setOnClickListener{

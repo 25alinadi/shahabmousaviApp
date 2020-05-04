@@ -30,4 +30,12 @@ class QuestionViewModel(application: Application) : AndroidViewModel(application
     fun returnedAnswer(id:String):LiveData<Message>{
         return questionRepository.returnedAnswer(id)
     }
+
+    fun answerQuestion(id:String,answer:String):LiveData<Message>{
+        return questionRepository.answerQuestion(id, answer)
+    }
+
+    fun getRole():LiveData<Message>{
+        return questionRepository.getRole()
+    }
 }

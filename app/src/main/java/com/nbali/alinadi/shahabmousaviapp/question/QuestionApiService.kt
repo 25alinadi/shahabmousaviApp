@@ -95,4 +95,38 @@ class QuestionApiService(var context:Application) {
 
         return mutableLiveData
     }
+
+    fun answerQuestion(id:String,answer:String):MutableLiveData<Message>{
+        var mutableLiveData = MutableLiveData<Message>()
+
+        apiService.answerQuestion(id,answer).enqueue(object :Callback<Message>{
+            override fun onFailure(call: Call<Message>, t: Throwable) {
+                Toast.makeText(context,"مشکل در دریافت برگردندان سوال",Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<Message>, response: Response<Message>) {
+                mutableLiveData.value = response.body()
+            }
+
+        })
+
+        return mutableLiveData
+    }
+
+    fun getRole():MutableLiveData<Message>{
+        var mutableLiveData = MutableLiveData<Message>()
+
+        apiService.getRole().enqueue(object :Callback<Message>{
+            override fun onFailure(call: Call<Message>, t: Throwable) {
+                Toast.makeText(context,"مشکل در ارسال اطلاعات",Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<Message>, response: Response<Message>) {
+                mutableLiveData.value = response.body()
+            }
+
+        })
+
+        return mutableLiveData
+    }
 }

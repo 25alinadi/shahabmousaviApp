@@ -10,6 +10,7 @@ import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.daimajia.androidanimations.library.Techniques
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -23,17 +24,24 @@ import com.nbali.alinadi.shahabmousaviapp.utils.Utils
  */
 class QuestionFragment : Fragment() {
 
-    lateinit var profileViewModel: ProfileViewModel
+    lateinit var viewModel: QuestionViewModel
+    lateinit var role:String
+    lateinit var status:String
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.fragment_question, container, false)
-        profileViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(QuestionViewModel::class.java)
         var fab = view.findViewById<FloatingActionButton>(R.id.fab_question_newQuestion)
         var btnQuestions = view.findViewById<RelativeLayout>(R.id.rel_question_questionList)
         var btnRules = view.findViewById<RelativeLayout>(R.id.rl_question_rules)
         var checkBox = view.findViewById<CheckBox>(R.id.ch_quesetion_agree)
         var txtRules = view.findViewById<TextView>(R.id.txt_question_agreeWhitRules)
 
-        if(profileViewModel.getRole() == "admin"){
+        viewModel.getRole().observe(this, Observer {
+            role = it.role
+            status = it.status
+        })
+
+        if(role == "admin" && status == "success"){
             fab.hide()
             checkBox.visibility = View.GONE
             txtRules.visibility = View.GONE
@@ -56,7 +64,7 @@ class QuestionFragment : Fragment() {
         }
 
         btnQuestions.setOnClickListener{
-            if (profileViewModel.getRole() == "admin"){
+            if (role == "admin" && status == "success"){
                 var transaction = activity!!.supportFragmentManager.beginTransaction()
                 Utils.customAnimation(activity!!.findViewById(R.id.main_fragment_frame),animation = Techniques.SlideInRight)
                 transaction.replace(R.id.main_fragment_frame,AdminAnswersFragment())

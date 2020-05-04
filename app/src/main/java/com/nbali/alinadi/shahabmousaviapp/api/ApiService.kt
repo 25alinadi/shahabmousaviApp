@@ -60,4 +60,12 @@ interface ApiService {
     @FormUrlEncoded
     @POST("mobile/returned")
     fun returnedAnswer(@Field("question_id") id:String):Call<Message>
+
+    @FormUrlEncoded
+    @POST("mobile/answer_question")
+    fun answerQuestion(@Field("question_id") id:String,
+                       @Field("question_answer") answer:String):Call<Message>
+
+    @GET("api/uRole")
+    fun getRole():Call<Message>
 }
