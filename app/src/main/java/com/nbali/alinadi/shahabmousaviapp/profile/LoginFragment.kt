@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.daimajia.androidanimations.library.Techniques
 
 import com.nbali.alinadi.shahabmousaviapp.R
+import com.nbali.alinadi.shahabmousaviapp.analysis.AnalysisFragment
 import com.nbali.alinadi.shahabmousaviapp.question.QuestionFragment
 import com.nbali.alinadi.shahabmousaviapp.utils.Utils
 
@@ -40,16 +41,25 @@ class LoginFragment(var destination:String) : Fragment() {
                             if (it.message.equals("شما با موفقیت وارد شدید") && !it.token.equals("") && it.status.equals("success")){
                                 viewModel.createToken(it.token,it.fullName,it.role)
                                 Toast.makeText(context,it.message,Toast.LENGTH_SHORT).show()
-                                if(destination == "account"){
-                                    var transaction = activity!!.supportFragmentManager.beginTransaction()
-                                    Utils.customAnimation(activity!!.findViewById(R.id.main_fragment_frame),animation = Techniques.FadeInUp)
-                                    transaction.replace(R.id.main_fragment_frame,ProfileFragment())
-                                    transaction.commit()
-                                }else{
-                                    var transaction = activity!!.supportFragmentManager.beginTransaction()
-                                    Utils.customAnimation(activity!!.findViewById(R.id.main_fragment_frame),animation = Techniques.FadeInUp)
-                                    transaction.replace(R.id.main_fragment_frame,QuestionFragment())
-                                    transaction.commit()
+                                when (destination) {
+                                    "account" -> {
+                                        var transaction = activity!!.supportFragmentManager.beginTransaction()
+                                        Utils.customAnimation(activity!!.findViewById(R.id.main_fragment_frame),animation = Techniques.FadeInUp)
+                                        transaction.replace(R.id.main_fragment_frame, ProfileFragment())
+                                        transaction.commit()
+                                    }
+                                    "analysis" -> {
+                                        var transaction = activity!!.supportFragmentManager.beginTransaction()
+                                        Utils.customAnimation(activity!!.findViewById(R.id.main_fragment_frame), animation = Techniques.FadeInUp)
+                                        transaction.replace(R.id.main_fragment_frame, AnalysisFragment())
+                                        transaction.commit()
+                                    }
+                                    "question" -> {
+                                        var transaction = activity!!.supportFragmentManager.beginTransaction()
+                                        Utils.customAnimation(activity!!.findViewById(R.id.main_fragment_frame),animation = Techniques.FadeInUp)
+                                        transaction.replace(R.id.main_fragment_frame,QuestionFragment())
+                                        transaction.commit()
+                                    }
                                 }
                             }else{
                                 Toast.makeText(context,it.message,Toast.LENGTH_SHORT).show()

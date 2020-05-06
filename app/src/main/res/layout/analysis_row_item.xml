@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginLeft="8dp"
+    android:background="@drawable/shape_bg_answer_item"
+    android:id="@+id/rel_rowItem_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingBottom="8dp"
+    android:elevation="1dp">
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/cool_gray"
+        android:paddingRight="4dp"
+        android:paddingLeft="4dp"
+        android:layout_marginRight="8dp"
+        android:id="@+id/txt_rowItem_num_share"
+        tools:text="تعداد سهام : ۳۰۰"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_marginLeft="8dp"/>
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/txt_rowItem_num_share"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/black"
+        tools:text="نماد"
+        android:id="@+id/txt_rowItem_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:id="@+id/v_rowItem"
+        android:layout_below="@id/txt_rowItem_symbol"
+        android:background="@color/gray400"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/cool_gray"
+        android:gravity="right"
+        android:id="@+id/txt_rowItem_average_buy"
+        android:layout_marginLeft="8dp"
+        android:layout_below="@id/v_rowItem"
+        tools:text="میانگین قیمت خرید (ریال) : ۱۲,۰۰۰ "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        />
+
+    <TextView
+        android:paddingRight="8dp"
+        android:paddingLeft="8dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
+        android:textColor="@color/cool_gray"
+        android:layout_below="@id/v_rowItem"
+        android:layout_toLeftOf="@id/txt_rowItem_average_buy"
+        android:layout_alignParentLeft="true"
+        android:gravity="left"
+        tools:text="درصد سهام : 5%"
+        android:id="@+id/txt_rowItem_percent_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_rowItem_desc_parent"
+        android:layout_below="@+id/txt_rowItem_average_buy"
+        android:padding="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
+        android:background="@drawable/shape_answer_answer"
+        android:elevation="1dp"
+        android:visibility="visible"
+        >
+
+        <TextView
+            android:id="@+id/txt_rowItem_description"
+            android:padding="8dp"
+            android:textColor="@color/prussian_blue"
+            android:layout_gravity="right"
+            tools:text="توضیح کلی"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+</RelativeLayout>
+
+
+
+

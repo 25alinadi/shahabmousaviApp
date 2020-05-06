@@ -1,5 +1,6 @@
 package com.nbali.alinadi.shahabmousaviapp.profile
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -44,7 +45,11 @@ class AccountFragment : Fragment() {
                 }
 
                 "اشتراک گذاری برنامه" -> {
-
+                    var intent = Intent(Intent.ACTION_SEND)
+                    intent.type = "text/plain"
+                    intent.putExtra(Intent.EXTRA_TEXT,"")
+                    startActivity(Intent.createChooser(intent,"انتسار اپلیکیشن شهاب موسوی"))
+                    startActivity(intent)
                 }
             }
         }

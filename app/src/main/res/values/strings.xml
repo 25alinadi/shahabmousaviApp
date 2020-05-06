@@ -17,6 +17,8 @@
     <string name="doctor_profeciency">متخصص حوزه بورس و اقتصاد</string>
     <string name="question_special">در صورت استفاده از این گزینه باید حساب شما دارای اعتبار باشد، برای خرید اعتبار کلیک کنید</string>
     <string name="question_info">سوالات حوزه بورسی خود را از ما بپرسید و با ارتباط مستمر با ما می توانید دانش اقتصادی خود را افزایش دهید\n قبل از پرسیدن سوال، قوانین پرسش و پاسخ را مطالعه کنید.</string>
+    <string name="analysis_dialog">برای ثبت سبد تحلیل جدید باید از طریق سایت شهاب موسوی و در پنل کاربری خودتان اقدام نمایید</string>
+    <string name="analysis_empty_txt">برای شما سبد تحلیلی ثبت نگردیده است</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

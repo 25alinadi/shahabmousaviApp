@@ -2,10 +2,7 @@ package com.nbali.alinadi.shahabmousaviapp.api
 
 import com.nbali.alinadi.shahabmousaviapp.models.*
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
     @GET("api/allproducts")
@@ -68,4 +65,10 @@ interface ApiService {
 
     @GET("api/uRole")
     fun getRole():Call<Message>
+
+    @GET("api/allanalysis")
+    fun getAllAnalysis():Call<List<Analysis>>
+
+    @GET("mobile/analysis_details")
+    fun getAllRows(@Query("analysis_id") analysis_id:String):Call<List<AnalysisRow>>
 }

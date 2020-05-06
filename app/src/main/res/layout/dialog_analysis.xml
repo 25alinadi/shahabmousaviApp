@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:gravity="center"
+        android:background="@color/prussian_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/white"
+            android:padding="8dp"
+            android:text="ایجاد سبد تحلیل جدید"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:textColor="@color/prussian_blue"
+        android:id="@+id/txt_analysisDialog_title"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:paddingRight="16dp"
+        android:text="@string/analysis_dialog"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+
+        android:layout_marginTop="8dp"
+        android:id="@+id/btn_analysisDialog_sendBasket"
+        android:text="ثبت سبد تحلیل جدید"
+        android:background="@drawable/shape_btn_yellow"
+        android:textColor="@color/prussian_blue"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

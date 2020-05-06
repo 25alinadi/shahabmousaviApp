@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
                 3->{
                     var token = viewModel.getToken()
-                    if (token.equals("")) {
+                    if (token == "") {
                         var transaction = supportFragmentManager.beginTransaction()
                         Utils.customAnimation(findViewById(R.id.main_fragment_frame),animation = Techniques.SlideInRight)
                         transaction.replace(R.id.main_fragment_frame, LoginFragment("question"))

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".analysis.DetailAnalysisFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/analysisRow_actionbar_rl"
+        android:elevation="8dp">
+
+        <ImageView
+            android:id="@+id/analysisRow_action_bar_arrow_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp"
+            app:srcCompat="@drawable/ic_arrow_forward_pursian_blue_24dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/analysisRow_action_bar_arrow_back"
+            android:text="جزيیات سبد تحلیل"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp"
+            android:textColor="@color/prussian_blue"
+            android:fontFamily="@font/iran_bold"
+            android:textSize="16sp"
+            />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rv_analysisRow_rows"
+        android:layout_below="@id/analysisRow_actionbar_rl"
+        android:paddingTop="4dp"
+        android:paddingRight="8dp"
+        android:paddingLeft="8dp"
+        android:paddingBottom="8dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl_analysisRow_emptyState"
+        android:layout_below="@id/analysisRow_actionbar_rl"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_analysisRow_emptyText"
+            android:text="جزییاتی برای این سبد ثبت نشده است"
+            android:textColor="@color/prussian_blue"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_marginTop="8dp"
+        android:id="@+id/frame_analysisRow_loadinganalysisrow"
+        android:layout_below="@id/analysisRow_actionbar_rl"
+        android:background="@color/default_white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+        <ProgressBar
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+</RelativeLayout>
