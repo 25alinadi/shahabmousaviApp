@@ -50,7 +50,6 @@ class DetailAnalysisFragment : Fragment() {
             var transaction = activity!!.supportFragmentManager.popBackStack()
         }
 
-
         return view
     }
 

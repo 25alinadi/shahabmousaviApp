@@ -71,4 +71,22 @@ interface ApiService {
 
     @GET("mobile/analysis_details")
     fun getAllRows(@Query("analysis_id") analysis_id:String):Call<List<AnalysisRow>>
+
+    @GET("api/alladvices")
+    fun getAllAdvices():Call<List<Advice>>
+
+    @GET("mobile/advicetiming")
+    fun getTiming(@Query("date") date:String):Call<Message>
+
+    @FormUrlEncoded
+    @POST("mobile/insert_timing")
+    fun insertTiming(@Field("timing_id") timing_id:String):Call<Message>
+
+    @FormUrlEncoded
+    @POST("mobile/advice_timing_admin")
+    fun getAllAdviceTimingAdmin(@Field("role") role:String):Call<List<Timing>>
+
+    @GET("mobile/admin_change_request")
+    fun changeRequestAdvice(@Query("request_id") rid:Int,
+                            @Query("request_status") status:Int):Call<Message>
 }

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rel_adviceadminItem_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/shape_bg_answer_item"
+    android:elevation="1dp"
+    android:paddingBottom="8dp">
+
+    <TextView
+        android:id="@+id/txt_adviceadminItem_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:textColor="@color/prussian_blue"
+        android:textSize="14sp"
+        tools:text="ساعت ۱۴ الی ۱۶" />
+
+    <TextView
+        android:id="@+id/txt_adviceadminItem_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/black"
+        android:layout_alignParentRight="true"
+        tools:text="پنج شنبه" />
+
+    <TextView
+        android:id="@+id/txt_adviceadminItem_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_toLeftOf="@id/txt_adviceadminItem_day"
+        android:textColor="@color/black"
+        tools:text="(۱۳۹۸-۱۰-۱۰)" />
+
+    <View
+        android:id="@+id/v_adviceadminItem"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/txt_adviceadminItem_date"
+        android:background="@color/gray400" />
+
+    <TextView
+        android:id="@+id/txt_adviceadminItem_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v_adviceadminItem"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="right"
+        android:textColor="@color/cool_gray"
+        tools:text="شهاب موسوی" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_adviceadminItem_cancle"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v_adviceadminItem"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toRightOf="@id/txt_adviceadminItem_userName"
+        app:cardBackgroundColor="@color/crismon"
+        app:cardCornerRadius="4dp">
+
+        <TextView
+            android:id="@+id/txt_adviceadminItem_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingTop="4dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="4dp"
+            android:textColor="@color/white"
+            android:text="کنسل شد" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_adviceadminItem_done"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v_adviceadminItem"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toRightOf="@id/cv_adviceadminItem_cancle"
+        app:cardBackgroundColor="@color/yellow_primary"
+        app:cardCornerRadius="4dp">
+
+        <TextView
+            android:id="@+id/txt_adviceadminItem_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingTop="4dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="4dp"
+            android:textColor="@color/prussian_blue"
+            android:text="تایید شد" />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
+
+
+
+

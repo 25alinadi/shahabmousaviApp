@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rel_adviceItem_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/shape_bg_answer_item"
+    android:elevation="1dp"
+    android:paddingBottom="8dp">
+
+    <TextView
+        android:id="@+id/txt_adviceItem_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:textColor="@color/prussian_blue"
+        android:textSize="14sp"
+        tools:text="ساعت ۱۴ الی ۱۶" />
+
+    <TextView
+        android:id="@+id/txt_adviceItem_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/black"
+        android:layout_alignParentRight="true"
+        tools:text="پنج شنبه" />
+
+    <TextView
+        android:id="@+id/txt_adviceItem_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_toLeftOf="@id/txt_adviceItem_day"
+        android:textColor="@color/black"
+        tools:text="(۱۳۹۸-۱۰-۱۰)" />
+
+    <View
+        android:id="@+id/v_adviceItem"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/txt_adviceItem_date"
+        android:background="@color/gray400" />
+
+    <TextView
+        android:id="@+id/txt_adviceItem_createdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v_adviceItem"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="right"
+        android:textColor="@color/cool_gray"
+        tools:text="تاریخ درخواست : 12/8/98" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_adviceItem_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v_adviceItem"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toRightOf="@id/txt_adviceItem_createdate"
+        app:cardBackgroundColor="@color/yellow_primary"
+        app:cardCornerRadius="4dp">
+
+        <TextView
+            android:id="@+id/txt_adviceItem_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingTop="4dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="4dp"
+            android:textColor="@color/prussian_blue"
+            tools:text="تایید شد" />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
+
+
+
+

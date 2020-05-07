@@ -5,5 +5,6 @@ class Message (
     var message:String,
     var token:String,
     var fullName:String,
-    var role:String
+    var role:String,
+    var data:List<Timing>
 )

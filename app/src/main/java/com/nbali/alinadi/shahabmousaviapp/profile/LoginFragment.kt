@@ -15,6 +15,7 @@ import com.daimajia.androidanimations.library.Techniques
 
 import com.nbali.alinadi.shahabmousaviapp.R
 import com.nbali.alinadi.shahabmousaviapp.analysis.AnalysisFragment
+import com.nbali.alinadi.shahabmousaviapp.home.HomeFragment
 import com.nbali.alinadi.shahabmousaviapp.question.QuestionFragment
 import com.nbali.alinadi.shahabmousaviapp.utils.Utils
 
@@ -48,10 +49,10 @@ class LoginFragment(var destination:String) : Fragment() {
                                         transaction.replace(R.id.main_fragment_frame, ProfileFragment())
                                         transaction.commit()
                                     }
-                                    "analysis" -> {
+                                    "home" -> {
                                         var transaction = activity!!.supportFragmentManager.beginTransaction()
                                         Utils.customAnimation(activity!!.findViewById(R.id.main_fragment_frame), animation = Techniques.FadeInUp)
-                                        transaction.replace(R.id.main_fragment_frame, AnalysisFragment())
+                                        transaction.replace(R.id.main_fragment_frame, HomeFragment())
                                         transaction.commit()
                                     }
                                     "question" -> {

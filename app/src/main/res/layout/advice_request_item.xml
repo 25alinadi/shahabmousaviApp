@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rel_requestItem_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/shape_bg_answer_item"
+    android:elevation="1dp"
+    android:paddingBottom="8dp">
+
+    <TextView
+        android:id="@+id/txt_requestItem_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:textColor="@color/prussian_blue"
+        android:textSize="14sp"
+        tools:text="ساعت ۱۴ الی ۱۶" />
+
+    <TextView
+        android:id="@+id/txt_requestItem_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/black"
+        android:layout_alignParentRight="true"
+        tools:text="پنج شنبه" />
+
+    <View
+        android:id="@+id/v_requestItem"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/txt_requestItem_day"
+        android:background="@color/gray400" />
+
+    <TextView
+        android:id="@+id/txt_requestItem_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v_requestItem"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="right"
+        android:textColor="@color/prussian_blue"
+        tools:text="تاریخ درخواست : 12/8/98" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_requestItem_request"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:text="ثبت"
+        android:foreground="?attr/selectableItemBackground"
+        android:background="@drawable/shape_btn_crismon"
+        android:textColor="@color/white"
+        android:layout_below="@id/v_requestItem"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        />
+</RelativeLayout>
+
+
+
+

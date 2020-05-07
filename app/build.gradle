@@ -67,4 +67,5 @@ dependencies {
     implementation 'com.etebarian:meow-bottom-navigation:1.2.0'
     implementation 'com.karumi:dexter:6.0.2'
     implementation 'com.gauravk.bubblenavigation:bubblenavigation:1.0.7'
+    implementation project(path: ':persianmaterialdatetimepicker')
 }
