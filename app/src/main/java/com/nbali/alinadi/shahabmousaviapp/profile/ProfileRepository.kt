@@ -4,9 +4,8 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.nbali.alinadi.shahabmousaviapp.models.Message
-import com.nbali.alinadi.shahabmousaviapp.models.User
+import com.nbali.alinadi.shahabmousaviapp.models.Info
 
 class ProfileRepository(var context: Application) {
     private var profileApiService = ProfileApiService(context)
@@ -47,5 +46,13 @@ class ProfileRepository(var context: Application) {
         editor.putString("fullName", fullName)
         editor.putString("role", role)
         editor.apply()
+    }
+
+    fun firstPage():LiveData<Info>{
+        return profileApiService.firstPage()
+    }
+
+    fun contactUs():LiveData<Info>{
+        return profileApiService.contactUs()
     }
 }

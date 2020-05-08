@@ -5,6 +5,12 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiService {
+    @GET("api/firspage")
+    fun firstPage():Call<Info>
+
+    @GET("api/contactus")
+    fun contactUs():Call<Info>
+
     @GET("api/allproducts")
     fun getAllProducts():Call<List<Product>>
 
@@ -89,4 +95,7 @@ interface ApiService {
     @GET("mobile/admin_change_request")
     fun changeRequestAdvice(@Query("request_id") rid:Int,
                             @Query("request_status") status:Int):Call<Message>
+
+    @GET("api/usersubscribe")
+    fun getUserSubscribe():Call<UserSubscribe>
 }

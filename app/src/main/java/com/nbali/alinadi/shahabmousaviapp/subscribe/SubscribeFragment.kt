@@ -1,11 +1,13 @@
 package com.nbali.alinadi.shahabmousaviapp.subscribe
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -29,7 +31,10 @@ class SubscribeFragment : Fragment() {
         var recyclerView = view.findViewById<RecyclerView>(R.id.subscribe_recycler_rv)
         recyclerView.layoutManager = GridLayoutManager(context,2,LinearLayoutManager.VERTICAL,false)
         viewModel.getAllSubscribes().observe(this, Observer {
-            recyclerView.adapter = SubscribeAdapter(context!!,it)
+            recyclerView.adapter = SubscribeAdapter(context!!,it) {
+                var dialog = SubscribeDialog()
+                dialog.show(childFragmentManager,null)
+            }
         })
 
         var btnBack = view.findViewById<ImageView>(R.id.action_bar_arrow_back)

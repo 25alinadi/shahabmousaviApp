@@ -3,9 +3,8 @@ package com.nbali.alinadi.shahabmousaviapp.profile
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.nbali.alinadi.shahabmousaviapp.models.Message
-import com.nbali.alinadi.shahabmousaviapp.models.User
+import com.nbali.alinadi.shahabmousaviapp.models.Info
 import com.nbali.alinadi.shahabmousaviapp.utils.Utils
 
 class ProfileViewModel(application: Application) : AndroidViewModel(application) {
@@ -36,5 +35,13 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
 
     fun getRole(): String {
         return profileRepository.getRole()
+    }
+
+    fun firstPage():LiveData<Info>{
+        return profileRepository.firstPage()
+    }
+
+    fun contactUs():LiveData<Info>{
+        return profileRepository.contactUs()
     }
 }

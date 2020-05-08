@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.nbali.alinadi.shahabmousaviapp.api.ApiClient
 import com.nbali.alinadi.shahabmousaviapp.api.ApiService
 import com.nbali.alinadi.shahabmousaviapp.models.Subscribe
+import com.nbali.alinadi.shahabmousaviapp.models.UserSubscribe
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,6 +25,23 @@ class SubScribeApiService(var context: Application) {
             override fun onResponse(call: Call<List<Subscribe>>, response: Response<List<Subscribe>>) {
                 mutableLiveData.value = response.body()
             }
+        })
+
+        return mutableLiveData
+    }
+
+    fun getUserSubscribe():MutableLiveData<UserSubscribe>{
+        var mutableLiveData = MutableLiveData<UserSubscribe>()
+
+        apiService.getUserSubscribe().enqueue(object :Callback<UserSubscribe>{
+            override fun onFailure(call: Call<UserSubscribe>, t: Throwable) {
+                Toast.makeText(context,"مشکل در دریافت اطلاعات اشتراک کاربر",Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<UserSubscribe>, response: Response<UserSubscribe>) {
+                mutableLiveData.value = response.body()
+            }
+
         })
 
         return mutableLiveData

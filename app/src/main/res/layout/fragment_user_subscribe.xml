@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".subscribe.UserSubscribeFragment"
+    android:background="@color/default_white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/user_subscribe_actionbar_rl"
+        android:elevation="8dp">
+        <ImageView
+            android:id="@+id/user_subscribe_action_bar_arrow_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:srcCompat="@drawable/ic_arrow_forward_pursian_blue_24dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/user_subscribe_action_bar_arrow_back"
+            android:text="اطلاعات اشتراک کاربر"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp"
+            android:textColor="@color/prussian_blue"
+            android:fontFamily="@font/iran_bold"
+            android:textSize="16sp"
+            />
+
+        <ImageView
+            android:id="@+id/img_analysis_add_basket"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="8dp"
+            android:layout_marginLeft="16dp"
+            app:srcCompat="@drawable/ic_analysis_add_black_24dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel_usersubscribe_parent"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/shape_bg_answer_item"
+        android:paddingBottom="8dp"
+        android:elevation="1dp"
+        >
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="16dp"
+            android:textColor="@color/black"
+            tools:text="عنوان اشتراک"
+            android:id="@+id/txt_usersubscribe_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/cool_gray"
+            tools:text="تاریخ خرید"
+            android:id="@+id/txt_usersubscribe_createDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            />
+
+        <View
+            android:id="@+id/v_usersubscribe"
+            android:background="@color/gray400"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txt_usersubscribe_title"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:padding="8dp"
+            tools:text="مدت زمان : ۳۰ روز"
+            android:textColor="@color/black"
+            android:layout_below="@id/v_usersubscribe"
+            android:id="@+id/txt_usersubscribe_duration"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:padding="8dp"
+            tools:text="تعداد سوال تخصصی : ۳۰ سوال"
+            android:textColor="@color/black"
+            android:layout_below="@id/v_usersubscribe"
+            android:id="@+id/txt_usersubscribe_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            />
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:id="@+id/txt_usersubscribe_expireDate"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@id/txt_usersubscribe_duration"
+            tools:text="تاریخ انقضا : 12/8/98"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentLeft="true"
+            android:gravity="right"
+            android:id="@+id/txt_usersubscribe_status"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@id/txt_usersubscribe_duration"
+            tools:text="وضعیت : فعال"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:textSize="12sp"
+            android:background="@drawable/shape_btn_secondry"
+            android:textColor="@color/white"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ll_usersubscribe_emptyState"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/default_white"
+        android:layout_below="@id/user_subscribe_actionbar_rl"
+        >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_analysis_emptyState"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="empty_subscribe.json"
+            app:lottie_loop="true"
+            android:layout_marginBottom="16dp"
+            />
+
+        <TextView
+            android:id="@+id/btn_analysis_insertBasket"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/cool_gray"
+            android:padding="8dp"
+            android:text="شما هیچ اشتراکی ندارید"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

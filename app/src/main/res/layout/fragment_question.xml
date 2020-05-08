@@ -18,13 +18,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="16dp"
+            android:layout_marginRight="8dp"
             android:text="پرسش و پاسخ"
             android:layout_centerVertical="true"
-            android:paddingRight="16dp"
+            android:paddingRight="8dp"
             android:textColor="@color/prussian_blue"
             android:fontFamily="@font/iran_bold"
             android:textSize="16sp"
+            />
+
+        <ImageView
+            android:id="@+id/home_coin_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_coin_darkblue"
+            android:padding="4dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_marginLeft="8dp"
             />
     </RelativeLayout>
 

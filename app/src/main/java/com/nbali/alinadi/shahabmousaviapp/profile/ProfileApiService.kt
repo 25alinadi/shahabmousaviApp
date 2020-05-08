@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import com.nbali.alinadi.shahabmousaviapp.api.ApiClient
 import com.nbali.alinadi.shahabmousaviapp.api.ApiService
 import com.nbali.alinadi.shahabmousaviapp.models.Message
-import com.nbali.alinadi.shahabmousaviapp.models.User
+import com.nbali.alinadi.shahabmousaviapp.models.Info
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -44,6 +44,39 @@ class ProfileApiService(var context:Application) {
                 mutableLiveData.value = response.body()
             }
 
+        })
+
+        return mutableLiveData
+    }
+
+    fun firstPage():MutableLiveData<Info>{
+        var mutableLiveData = MutableLiveData<Info>()
+
+        apiService.firstPage().enqueue(object :Callback<Info>{
+            override fun onFailure(call: Call<Info>, t: Throwable) {
+                Toast.makeText(context,"مشکل در دریافت اطلاعات",Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<Info>, response: Response<Info>) {
+                mutableLiveData.value = response.body()
+            }
+        })
+
+        return mutableLiveData
+    }
+
+    fun contactUs():MutableLiveData<Info>{
+        var mutableLiveData = MutableLiveData<Info>()
+
+        apiService.contactUs().enqueue(object :Callback<Info>{
+            override fun onFailure(call: Call<Info>, t: Throwable) {
+                Toast.makeText(context,"مشکل در دریافت اطلاعات",Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<Info>, response: Response<Info>) {
+                mutableLiveData.value = response.body()
+                Log.i("LOG",response.body()!!.insta_link)
+            }
         })
 
         return mutableLiveData
