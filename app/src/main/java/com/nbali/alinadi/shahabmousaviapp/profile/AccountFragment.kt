@@ -33,7 +33,11 @@ class AccountFragment : Fragment() {
         recycler.adapter = AccountAdapter(context!!,createMenuList()) {
             when(it){
                 "حساب کاربری" -> {
-
+                    var transaction = activity!!.supportFragmentManager.beginTransaction()
+                    Utils.customAnimation(activity!!.findViewById(R.id.main_fragment_frame),animation = Techniques.Landing)
+                    transaction.replace(R.id.main_fragment_frame,EditProfileFragment())
+                    transaction.addToBackStack(null)
+                    transaction.commit()
                 }
 
                 "نشان شده ها" -> {

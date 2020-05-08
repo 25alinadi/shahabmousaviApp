@@ -65,7 +65,12 @@ class AskFragment : Fragment() {
 
             viewModel.ask(edtTitle.text.toString(),edtText.text.toString(),spinnerText,type).observe(this,
                 Observer{
-                    Toast.makeText(context,it.message,Toast.LENGTH_SHORT).show()
+                    if(it.status == "success"){
+                        Toast.makeText(context,it.message,Toast.LENGTH_SHORT).show()
+                        var transaction = activity!!.supportFragmentManager.popBackStack()
+                    }else{
+                        Toast.makeText(context,it.message,Toast.LENGTH_SHORT).show()
+                    }
                 })
         }
 

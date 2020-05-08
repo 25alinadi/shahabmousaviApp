@@ -98,4 +98,14 @@ interface ApiService {
 
     @GET("api/usersubscribe")
     fun getUserSubscribe():Call<UserSubscribe>
+
+    @GET("api/userinfo")
+    fun userInfo():Call<User>
+
+    @FormUrlEncoded
+    @POST("mobile/updateprofile")
+    fun updateProfile(@Field("firstName") firstName: String,
+                      @Field("lastName") lastName: String,
+                      @Field("phone") phone: String,
+                      @Field("gender") gender: Int):Call<Message>
 }

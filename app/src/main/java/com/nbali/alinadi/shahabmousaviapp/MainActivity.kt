@@ -2,6 +2,10 @@ package com.nbali.alinadi.shahabmousaviapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.view.View
+import android.widget.RelativeLayout
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.daimajia.androidanimations.library.Techniques
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
@@ -17,13 +21,20 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var viewModel:ProfileViewModel
     lateinit var bottomNavigation: MeowBottomNavigation
+    var backPressedOnce = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bottomNavigation = findViewById<MeowBottomNavigation>(R.id.bottom_navigation_main)
+        var splashScreen = findViewById<RelativeLayout>(R.id.rel_main_splash)
         viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
         viewModel.getToken()
+        Utils.changeStatusBarColor(this)
+        Handler().postDelayed({
+            Utils.customAnimation(findViewById(R.id.rel_main_splash), animation = Techniques.SlideOutUp)
+            splashScreen.visibility = View.GONE
+        },3000)
 
         setupCurvedBottomNavigation()
 
@@ -89,46 +100,28 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-//    private fun setupCurvedBottomNavigation() {
-//        bottomNavigation = findViewById<BubbleNavigationLinearView>(R.id.bottom_navigation_main)
-//        bottomNavigation.setNavigationChangeListener { view , position ->
-//            when(position){
-//                3->{
-//                    var transaction = supportFragmentManager.beginTransaction()
-//                    transaction.replace(R.id.main_fragment_frame, HomeFragment())
-//                    transaction.commit()
-//                }
-//
-//                2->{
-//                    var transaction = supportFragmentManager.beginTransaction()
-//                    transaction.replace(R.id.main_fragment_frame, QuestionFragment())
-//                    transaction.commit()
-//                }
-//
-//                1->{
-//                    var transaction = supportFragmentManager.beginTransaction()
-//                    transaction.replace(R.id.main_fragment_frame, PostFragment())
-//                    transaction.commit()
-//                }
-//
-//                0->{
-//                    var transaction = supportFragmentManager.beginTransaction()
-//                    transaction.replace(R.id.main_fragment_frame, ProfileFragment())
-//                    transaction.commit()
-//                }
-//            }
-//        }
-//
-//    }
-
     override fun onBackPressed() {
-        var fragment = supportFragmentManager.findFragmentByTag("rulesFragment")
-        if(fragment != null){
-            var transaction =  supportFragmentManager.beginTransaction()
-            Utils.customAnimation(findViewById(R.id.main_fragment_frame),animation = Techniques.SlideInLeft)
-            transaction.replace(R.id.main_fragment_frame,QuestionFragment())
-            transaction.commit()
+        var backStack = supportFragmentManager.backStackEntryCount
+        if(backStack == 0){
+            if(bottomNavigation.isShowing(4)){
+                if(backPressedOnce){
+                    super.onBackPressed()
+                    return
+                }else{
+                    backPressedOnce = true
+                    Toast.makeText(this,"برای خروج دوباره دکمه بازگشت را بزنید",Toast.LENGTH_SHORT).show()
+                    Handler().postDelayed({
+                        backPressedOnce = false
+                    },2000)
+                }
+            }else{
+                bottomNavigation.show(4)
+                var transaction = supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.main_fragment_frame, HomeFragment())
+                transaction.commit()
+            }
+        }else{
+            super.onBackPressed()
         }
-        super.onBackPressed()
     }
 }

@@ -29,4 +29,39 @@
         >
     </FrameLayout>
 
+    <RelativeLayout
+
+        android:id="@+id/rel_main_splash"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textColor="@color/white"
+            android:id="@+id/splash_main_logo"
+            android:layout_centerInParent="true"
+            android:textSize="42dp"
+            android:text="دکتر شهاب موسوی"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="@color/white"
+            android:id="@+id/txt_splash_text"
+            android:layout_centerHorizontal="true"
+            android:text="متخصص در حوزه بورس و اقتصاد"
+            android:layout_below="@id/splash_main_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"/>
+
+        <ProgressBar
+            android:layout_marginTop="32dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/txt_splash_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
 </RelativeLayout>

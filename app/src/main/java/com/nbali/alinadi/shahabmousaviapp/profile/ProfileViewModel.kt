@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.nbali.alinadi.shahabmousaviapp.models.Message
 import com.nbali.alinadi.shahabmousaviapp.models.Info
+import com.nbali.alinadi.shahabmousaviapp.models.User
 import com.nbali.alinadi.shahabmousaviapp.utils.Utils
 
 class ProfileViewModel(application: Application) : AndroidViewModel(application) {
@@ -37,11 +38,23 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
         return profileRepository.getRole()
     }
 
+    fun updateFullName(fullName:String){
+        return profileRepository.updateFullName(fullName)
+    }
+
     fun firstPage():LiveData<Info>{
         return profileRepository.firstPage()
     }
 
     fun contactUs():LiveData<Info>{
         return profileRepository.contactUs()
+    }
+
+    fun userInfo(): LiveData<User>{
+        return profileRepository.userInfo()
+    }
+
+    fun updateProfile(firstName: String,lastName: String,phone: String,gender: Int):LiveData<Message>{
+        return profileRepository.updateProfile(firstName, lastName,phone, gender)
     }
 }

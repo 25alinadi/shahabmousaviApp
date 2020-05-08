@@ -4,6 +4,7 @@ import android.app.Activity
 import android.os.Build
 import android.view.View
 import android.view.WindowManager
+import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
@@ -32,7 +33,7 @@ object Utils {
             .playOn(view)
     }
 
-    fun changeStatusBarColor(activity: Activity, color:Int= R.color.white) {
+    fun changeStatusBarColor(activity: Activity, color:Int= R.color.black) {
         var window = activity.getWindow()
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
