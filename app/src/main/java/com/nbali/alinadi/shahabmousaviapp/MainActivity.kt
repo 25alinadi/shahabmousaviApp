@@ -47,6 +47,11 @@ class MainActivity : AppCompatActivity() {
                 disconnected.visibility = View.VISIBLE
             }else{
                 disconnected.visibility = View.GONE
+                bottomNavigation.show(4)
+                var transaction = supportFragmentManager.beginTransaction()
+                Utils.customAnimation(findViewById(R.id.main_fragment_frame),animation = Techniques.SlideInRight)
+                transaction.replace(R.id.main_fragment_frame, HomeFragment())
+                transaction.commit()
             }
         }
 
