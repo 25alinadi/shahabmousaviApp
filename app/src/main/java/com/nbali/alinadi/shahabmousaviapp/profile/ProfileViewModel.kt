@@ -42,6 +42,10 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
         return profileRepository.updateFullName(fullName)
     }
 
+    fun signOut(){
+        return profileRepository.signOut()
+    }
+
     fun firstPage():LiveData<Info>{
         return profileRepository.firstPage()
     }

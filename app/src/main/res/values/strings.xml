@@ -21,7 +21,9 @@
     <string name="subscribe_dialog">با خرید اشتراک جدید، اشتراک قبل با هر تعداد سوال و زمان باقیمانده منقضی شده و اشتراک جدید جایگزین آن می شود</string>
     <string name="analysis_empty_txt">برای شما سبد تحلیلی ثبت نگردیده است</string>
     <string name="advice_empty_txt">شما هیچ وقت مشاوره ای نگرفته اید</string>
+    <string name="signout_dialog">آیا مایل به خروج از حساب کاربری خودتان هستید ؟</string>
     <string name="RSA">MIHNMA0GCSqGSIb3DQEBAQUAA4G7ADCBtwKBrwCm7qWwN6aNtLA9uOYpjf0gartiQmPQGkIc9RjDxgA4FRFOYd6qfnsWwJ6axQgOac4/XNTRnydDIzuFnq6mkmkIRrY2xTYFaXD6h51av5FKTa7ELqwMsnfMaqoo6V+ECrK4bXKSS1tmD7q4rNoJMa5j0hQQK2r825Aw1ti8kb2JjYMQjJD+1xC0xwOFt+DqnO5u5EEiY/oSTJPe189W7dXpB/hT/i2MSrkTDQzVa90CAwEAAQ==</string>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->

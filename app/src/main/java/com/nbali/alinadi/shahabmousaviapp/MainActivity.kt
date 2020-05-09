@@ -1,14 +1,17 @@
 package com.nbali.alinadi.shahabmousaviapp
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.IntentFilter
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.daimajia.androidanimations.library.Techniques
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
+import com.nbali.alinadi.shahabmousaviapp.broadcast.ConnectivityBroadcastReceiver
 import com.nbali.alinadi.shahabmousaviapp.home.HomeFragment
 import com.nbali.alinadi.shahabmousaviapp.post.PostFragment
 import com.nbali.alinadi.shahabmousaviapp.profile.LoginFragment
@@ -22,19 +25,30 @@ class MainActivity : AppCompatActivity() {
     lateinit var viewModel:ProfileViewModel
     lateinit var bottomNavigation: MeowBottomNavigation
     var backPressedOnce = false
+    private lateinit var connectivityBroadcastReceiver : ConnectivityBroadcastReceiver
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bottomNavigation = findViewById<MeowBottomNavigation>(R.id.bottom_navigation_main)
         var splashScreen = findViewById<RelativeLayout>(R.id.rel_main_splash)
+        var disconnected = findViewById<LinearLayout>(R.id.ll_home_disconnected)
         viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
         viewModel.getToken()
         Utils.changeStatusBarColor(this)
+
         Handler().postDelayed({
             Utils.customAnimation(findViewById(R.id.rel_main_splash), animation = Techniques.SlideOutUp)
             splashScreen.visibility = View.GONE
         },3000)
+
+        connectivityBroadcastReceiver = ConnectivityBroadcastReceiver {
+            if(!it){
+                disconnected.visibility = View.VISIBLE
+            }else{
+                disconnected.visibility = View.GONE
+            }
+        }
 
         setupCurvedBottomNavigation()
 
@@ -100,9 +114,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        this.registerReceiver(connectivityBroadcastReceiver, IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"))
+    }
+
     override fun onBackPressed() {
         var backStack = supportFragmentManager.backStackEntryCount
-        if(backStack == 0){
+        if(backStack <= 1){
             if(bottomNavigation.isShowing(4)){
                 if(backPressedOnce){
                     super.onBackPressed()
@@ -123,5 +142,10 @@ class MainActivity : AppCompatActivity() {
         }else{
             super.onBackPressed()
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        this.unregisterReceiver(connectivityBroadcastReceiver)
     }
 }

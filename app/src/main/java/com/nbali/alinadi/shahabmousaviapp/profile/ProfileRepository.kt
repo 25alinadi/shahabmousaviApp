@@ -60,6 +60,18 @@ class ProfileRepository(var context: Application) {
         editor.apply()
     }
 
+    fun signOut(){
+        var sharedPreference = context.getSharedPreferences(
+            "smInfo",
+            Context.MODE_PRIVATE
+        )
+        var editor: SharedPreferences.Editor = sharedPreference.edit()
+        editor.putString("key", "")
+        editor.putString("fullName", "")
+        editor.putString("role", "")
+        editor.apply()
+    }
+
     fun firstPage():LiveData<Info>{
         return profileApiService.firstPage()
     }

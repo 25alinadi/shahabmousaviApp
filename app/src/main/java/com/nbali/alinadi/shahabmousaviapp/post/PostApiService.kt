@@ -57,7 +57,6 @@ class PostApiService(var context:Application) {
 
             override fun onResponse(call: Call<List<Post>>, response: Response<List<Post>>) {
                 mutableLiveData.value = response.body()
-                Log.i("LOG", response.body()!!.size.toString())
             }
         })
 

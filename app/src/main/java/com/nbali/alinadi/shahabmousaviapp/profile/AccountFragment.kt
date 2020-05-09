@@ -55,6 +55,11 @@ class AccountFragment : Fragment() {
                     startActivity(Intent.createChooser(intent,"انتسار اپلیکیشن شهاب موسوی"))
                     startActivity(intent)
                 }
+
+                "خروج از حساب کاربری" -> {
+                    var dialog = SignoutDialog()
+                    dialog.show(childFragmentManager,null)
+                }
             }
         }
         var txtLogin = view.findViewById<TextView>(R.id.txt_account_login)
@@ -87,6 +92,8 @@ class AccountFragment : Fragment() {
         mutableList.add(menu2)
         var menu3 = ProfileAccount("اشتراک گذاری برنامه",R.drawable.share_variant)
         mutableList.add(menu3)
+        var menu4 = ProfileAccount("خروج از حساب کاربری",R.drawable.ic_signout)
+        mutableList.add(menu4)
 
         return mutableList
     }

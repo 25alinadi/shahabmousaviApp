@@ -64,4 +64,36 @@
 
     </RelativeLayout>
 
+    <LinearLayout
+        android:id="@+id/ll_home_disconnected"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/default_white"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_analysis_emptyState"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="disconnected.json"
+            app:lottie_loop="true"
+            android:layout_marginBottom="16dp"
+            />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/btn_analysis_insertBasket"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/cool_gray"
+            android:padding="8dp"
+            android:text="اتصال شما به اینترنت قطع می باشد"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
 </RelativeLayout>
