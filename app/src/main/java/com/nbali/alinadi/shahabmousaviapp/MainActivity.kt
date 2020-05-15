@@ -25,14 +25,14 @@ class MainActivity : AppCompatActivity() {
     lateinit var viewModel:ProfileViewModel
     lateinit var bottomNavigation: MeowBottomNavigation
     var backPressedOnce = false
-    private lateinit var connectivityBroadcastReceiver : ConnectivityBroadcastReceiver
+//    private lateinit var connectivityBroadcastReceiver : ConnectivityBroadcastReceiver
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bottomNavigation = findViewById<MeowBottomNavigation>(R.id.bottom_navigation_main)
         var splashScreen = findViewById<RelativeLayout>(R.id.rel_main_splash)
-        var disconnected = findViewById<LinearLayout>(R.id.ll_home_disconnected)
+//        var disconnected = findViewById<LinearLayout>(R.id.ll_home_disconnected)
         viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
         viewModel.getToken()
         Utils.changeStatusBarColor(this)
@@ -42,18 +42,18 @@ class MainActivity : AppCompatActivity() {
             splashScreen.visibility = View.GONE
         },3000)
 
-        connectivityBroadcastReceiver = ConnectivityBroadcastReceiver {
-            if(!it){
-                disconnected.visibility = View.VISIBLE
-            }else{
-                disconnected.visibility = View.GONE
-                bottomNavigation.show(4)
-                var transaction = supportFragmentManager.beginTransaction()
-                Utils.customAnimation(findViewById(R.id.main_fragment_frame),animation = Techniques.SlideInRight)
-                transaction.replace(R.id.main_fragment_frame, HomeFragment())
-                transaction.commit()
-            }
-        }
+//        connectivityBroadcastReceiver = ConnectivityBroadcastReceiver {
+//            if(!it){
+//                disconnected.visibility = View.VISIBLE
+//            }else{
+//                disconnected.visibility = View.GONE
+//                bottomNavigation.show(4)
+//                var transaction = supportFragmentManager.beginTransaction()
+//                Utils.customAnimation(findViewById(R.id.main_fragment_frame),animation = Techniques.SlideInRight)
+//                transaction.replace(R.id.main_fragment_frame, HomeFragment())
+//                transaction.commit()
+//            }
+//        }
 
         setupCurvedBottomNavigation()
 
@@ -121,7 +121,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        this.registerReceiver(connectivityBroadcastReceiver, IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"))
+//        this.registerReceiver(connectivityBroadcastReceiver, IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"))
     }
 
     override fun onBackPressed() {
@@ -151,6 +151,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        this.unregisterReceiver(connectivityBroadcastReceiver)
+//        this.unregisterReceiver(connectivityBroadcastReceiver)
     }
 }

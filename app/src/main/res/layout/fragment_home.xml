@@ -51,9 +51,9 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/shape_bg_service"
         android:paddingLeft="8dp"
-        android:paddingTop="16dp"
+        android:paddingTop="20dp"
         android:paddingRight="8dp"
-        android:paddingBottom="16dp">
+        android:paddingBottom="50dp">
 
         <LinearLayout
             android:id="@+id/service_row2"
@@ -76,8 +76,8 @@
 
                 <ImageView
                     android:id="@+id/home_analysis_icon"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="4dp"
                     android:layout_marginTop="8dp"
@@ -93,7 +93,7 @@
                     android:paddingTop="4dp"
                     android:text="سبد تحلیل"
                     android:textColor="@color/darkblue"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -110,8 +110,8 @@
 
                 <ImageView
                     android:id="@+id/home_advice_icon"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="4dp"
                     android:layout_marginTop="8dp"
@@ -127,7 +127,7 @@
                     android:paddingTop="4dp"
                     android:text="وقت مشاوره"
                     android:textColor="@color/darkblue"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
             </RelativeLayout>
 
@@ -145,8 +145,8 @@
 
                 <ImageView
                     android:id="@+id/home_subscribe_icon"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="4dp"
                     android:layout_marginTop="8dp"
@@ -162,7 +162,7 @@
                     android:paddingTop="4dp"
                     android:text="خرید اشتراک"
                     android:textColor="@color/darkblue"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
             </RelativeLayout>
 

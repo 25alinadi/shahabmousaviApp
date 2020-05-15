@@ -37,17 +37,19 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:layout_marginTop="8dp"
             android:tint="@color/white"
             android:layout_marginRight="16dp"
             android:layout_alignParentRight="true"
             app:srcCompat="@drawable/ic_profile_black"
-            android:layout_width="40dp"
+            android:layout_width="30dp"
             android:id="@+id/img_profile_profileImage"
-            android:layout_height="40dp"/>
+            android:layout_height="30dp"/>
 
         <TextView
             android:id="@+id/txt_profile_name"
             android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
             android:textColor="@color/white"
             android:layout_toLeftOf="@id/img_profile_profileImage"
             tools:text="شهاب موسوی"

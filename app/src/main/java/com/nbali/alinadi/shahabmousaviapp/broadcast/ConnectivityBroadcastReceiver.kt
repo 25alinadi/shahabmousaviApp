@@ -9,7 +9,10 @@ import android.os.Build
 import android.widget.Toast
 
 class ConnectivityBroadcastReceiver(var onClickNetworkState:(item:Boolean)->Unit) : BroadcastReceiver() {
+    constructor() : this({})
+
     override fun onReceive(context: Context?, intent: Intent?) {
+
         var connected = isNetworkAvailable(context!!)
         if(!connected){
             Toast.makeText(context,"خطا در اتصال به اینترنت",Toast.LENGTH_SHORT).show()
