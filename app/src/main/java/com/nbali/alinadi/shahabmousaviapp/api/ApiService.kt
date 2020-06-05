@@ -5,7 +5,7 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiService {
-    @GET("api/firspage")
+    @GET("api/firstpage")
     fun firstPage():Call<Info>
 
     @GET("api/contactus")
@@ -20,22 +20,20 @@ interface ApiService {
     @GET("api/allsubscribes")
     fun getAllSubscribes():Call<List<Subscribe>>
 
-    @FormUrlEncoded
-    @POST("mobile/register_user")
+    @GET("mobile/registeruser")
     fun registerUser(
-        @Field("firstName") firstName:String,
-        @Field("lastName") lastName:String,
-        @Field("email") email:String,
-        @Field("password") password:String,
-        @Field("phone") phone:String,
-        @Field("gender") gender:Int
+        @Query("firstName") firstName:String,
+        @Query("lastName") lastName:String,
+        @Query("email") email:String,
+        @Query("password") password:String,
+        @Query("phone") phone:String,
+        @Query("gender") gender:Int
     ):Call<Message>
 
-    @FormUrlEncoded
-    @POST("mobile/login_user")
+    @GET("mobile/loginuser")
     fun loginUser(
-        @Field("email") email:String,
-        @Field("password") password:String
+        @Query("email") email:String,
+        @Query("password") password:String
     ):Call<Message>
 
     @GET("api/allrules")

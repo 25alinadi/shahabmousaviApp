@@ -1,6 +1,10 @@
 package com.nbali.alinadi.shahabmousaviapp.models
 
+import com.google.gson.annotations.SerializedName
+
 class Rule(
-    var rule_id:String,
-    var rule_text:String
+    @SerializedName("rule_id")
+    val rule_id:String,
+    @SerializedName("rule_text")
+    val rule_text:String
 )

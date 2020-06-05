@@ -2,14 +2,21 @@ package com.nbali.alinadi.shahabmousaviapp.models
 
 import android.os.Parcel
 import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
 
 class Post(
-    var post_id : String,
-    var post_title : String,
-    var post_content : String,
-    var post_link : String,
-    var post_image : String,
-    var post_date : String
+    @SerializedName("post_id")
+    val post_id : String,
+    @SerializedName("post_title")
+    val post_title : String,
+    @SerializedName("post_content")
+    val post_content : String,
+    @SerializedName("post_link")
+    val post_link : String,
+    @SerializedName("post_image")
+    val post_image : String,
+    @SerializedName("post_date")
+    val post_date : String
 ):Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,

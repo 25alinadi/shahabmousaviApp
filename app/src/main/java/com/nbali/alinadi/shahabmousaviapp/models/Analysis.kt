@@ -2,13 +2,20 @@ package com.nbali.alinadi.shahabmousaviapp.models
 
 import android.os.Parcel
 import android.os.Parcelable
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
 
 class Analysis (
-    var analysis_id:String,
-    var analysis_description:String,
-    var analysis_status:String,
-    var analysis_updated_at:String,
-    var analysis_created_at:String
+    @SerializedName("analysis_id")
+    val analysis_id:String,
+    @SerializedName("analysis_description")
+    val analysis_description:String,
+    @SerializedName("analysis_status")
+    val analysis_status:String,
+    @SerializedName("analysis_updated_at")
+    val analysis_updated_at:String,
+    @SerializedName("analysis_created_at")
+    val analysis_created_at:String
 ):Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,

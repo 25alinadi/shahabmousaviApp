@@ -1,7 +1,6 @@
 package com.nbali.alinadi.shahabmousaviapp.profile
 
 import android.app.Application
-import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.nbali.alinadi.shahabmousaviapp.api.ApiClient
@@ -27,7 +26,6 @@ class ProfileApiService(var context:Application) {
             override fun onResponse(call: Call<Message>, response: Response<Message>) {
                 mutableLiveData.value = response.body()
             }
-
         })
 
         return mutableLiveData
@@ -39,12 +37,12 @@ class ProfileApiService(var context:Application) {
         apiService.loginUser(email,password).enqueue(object :Callback<Message>{
             override fun onFailure(call: Call<Message>, t: Throwable) {
                 Toast.makeText(context,"خطا در ورود به حساب کاربری",Toast.LENGTH_SHORT).show()
+
             }
 
             override fun onResponse(call: Call<Message>, response: Response<Message>) {
                 mutableLiveData.value = response.body()
             }
-
         })
 
         return mutableLiveData
@@ -55,7 +53,8 @@ class ProfileApiService(var context:Application) {
 
         apiService.firstPage().enqueue(object :Callback<Info>{
             override fun onFailure(call: Call<Info>, t: Throwable) {
-                Toast.makeText(context,"مشکل در دریافت اطلاعات",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,t.toString(),Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context,"مشکل در دریافت اطلاعات",Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<Info>, response: Response<Info>) {

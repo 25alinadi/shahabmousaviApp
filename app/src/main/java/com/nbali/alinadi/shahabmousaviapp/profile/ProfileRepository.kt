@@ -17,7 +17,7 @@ class ProfileRepository(var context: Application) {
     }
 
     fun loginUser(email:String,password:String): LiveData<Message>{
-        return profileApiService.loginUser(email, password)
+        return profileApiService.loginUser(email,password)
     }
 
     fun getToken(): String {

@@ -56,7 +56,7 @@ class RegisterFragment(var destination:String) : Fragment() {
 
                             viewModel.registerUser(edtFirstName.text.toString(),edtLastName.text.toString(),edtEmail.text.toString(),edtPassword.text.toString(),edtPhone.text.toString(),gender).observe(this,
                                 Observer {
-                                    if(it.message.equals("ثبت نام شما با موفقیت انجام شد") && !it.token.equals("")){
+                                    if(it.message == "ثبت نام شما با موفقیت انجام شد"){
                                         viewModel.createToken(it.token,it.fullName,it.role)
                                         Toast.makeText(context,it.message, Toast.LENGTH_SHORT).show()
                                         if(destination == "account"){

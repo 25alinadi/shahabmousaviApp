@@ -1,10 +1,18 @@
 package com.nbali.alinadi.shahabmousaviapp.models
 
+import com.google.gson.annotations.SerializedName
+
 class Message (
-    var status:String,
-    var message:String,
-    var token:String,
-    var fullName:String,
-    var role:String,
-    var data:List<Timing>
+    @SerializedName("status")
+    val status:String,
+    @SerializedName("message")
+    val message:String,
+    @SerializedName("token")
+    val token:String,
+    @SerializedName("fullName")
+    val fullName:String,
+    @SerializedName("role")
+    val role:String,
+    @SerializedName("data")
+    val data:List<Timing>
 )

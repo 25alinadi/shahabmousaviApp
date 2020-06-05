@@ -1,6 +1,10 @@
 package com.nbali.alinadi.shahabmousaviapp.models
 
+import com.google.gson.annotations.SerializedName
+
 class ProfileAccount(
-    var title:String,
-    var icon:Int
+    @SerializedName("title")
+    val title:String,
+    @SerializedName("icon")
+    val icon:Int
 )

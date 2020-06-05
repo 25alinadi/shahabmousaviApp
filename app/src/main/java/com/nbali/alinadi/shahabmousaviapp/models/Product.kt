@@ -2,15 +2,23 @@ package com.nbali.alinadi.shahabmousaviapp.models
 
 import android.os.Parcel
 import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
 
 class Product (
-    var product_id:String,
-    var product_name:String,
-    var product_image:String,
-    var product_description:String,
-    var product_link:String,
-    var product_amount:String,
-    var product_amount_app:String
+    @SerializedName("product_id")
+    val product_id:String,
+    @SerializedName("product_name")
+    val product_name:String,
+    @SerializedName("product_image")
+    val product_image:String,
+    @SerializedName("product_description")
+    val product_description:String,
+    @SerializedName("product_link")
+    val product_link:String,
+    @SerializedName("product_amount")
+    val product_amount:String,
+    @SerializedName("product_amount_app")
+    val product_amount_app:String
 ):Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,

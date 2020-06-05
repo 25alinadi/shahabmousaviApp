@@ -17,7 +17,7 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun loginUser(email:String,password:String): LiveData<Message>{
-        return profileRepository.loginUser(email, password)
+        return profileRepository.loginUser(email,password)
     }
 
     fun createToken(token: String,fullName:String,role:String) {
